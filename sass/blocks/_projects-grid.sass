@@ -1,0 +1,45 @@
+@use '../variables' as vars
+  
+.projects-grid
+  border: 1px solid var(--borders-color)
+  background-color: var(--borders-color)
+  display: grid
+  gap: 1px
+  grid-template-columns: repeat(8, 1fr)
+  grid-template-rows: repeat(3, auto)
+  grid-auto-columns: 1fr
+  grid-auto-rows: auto
+  grid-auto-flow: row dense
+
+  @media (max-width: vars.$md)
+    grid-template-columns: repeat(2, 1fr)
+
+  @media (max-width: vars.$sm)
+    grid-template-columns: 1fr
+
+.projects-grid__item
+  background-color: white
+  padding: 20px
+
+section[data-grid-area='livable']
+  grid-column: span 3
+  grid-row: span 2
+
+  @media (max-width: vars.$md)
+    grid-column: span 2
+
+  @media (max-width: vars.$sm)
+    grid-column: span 1
+
+section[data-grid-area='linen'],
+section[data-grid-area='lokalebasen']
+  @media (min-width: vars.$md)
+    grid-column: span 3
+
+section[data-grid-area='travelstock'],
+section[data-grid-area='calendar'],
+section[data-grid-area='payroll'],
+section[data-grid-area='corp-website'],
+section[data-grid-area='worklinx']
+  @media (min-width: vars.$md)
+    grid-column: span 2

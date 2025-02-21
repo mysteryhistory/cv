@@ -1,0 +1,18 @@
+@use '../variables' as vars
+
+.job-details
+  margin-top: 15px
+
+  @media (min-width: vars.$sm) and (max-width: vars.$md)
+    display: flex
+
+.job-details__list
+  & + &
+    margin-top: 15px
+
+  @media (min-width: vars.$sm) and (max-width: vars.$md)
+    width: 50%
+
+    & + &
+      margin-top: initial
+      margin-left: 20px
